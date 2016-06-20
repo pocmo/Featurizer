@@ -15,7 +15,7 @@ import java.util.List;
  * Abstract base class for rules that use a selector like CSS query to find elements.
  */
 public abstract class SelectorRule<T> implements Rule<T> {
-    private String cssQuery;
+    private final String cssQuery;
 
     public SelectorRule(String cssQuery) {
         this.cssQuery = cssQuery;
@@ -25,12 +25,12 @@ public abstract class SelectorRule<T> implements Rule<T> {
 
     @Override
     public List<T> apply(Document document) {
-        Elements elements = document.select(cssQuery);
+        final Elements elements = document.select(cssQuery);
 
-        List<T> results = new ArrayList<>();
+        final List<T> results = new ArrayList<>();
 
         for (int i = 0; i < elements.size(); i++) {
-            T result = process(elements.get(i));
+            final T result = process(elements.get(i));
 
             if (result != null) {
                 results.add(result);

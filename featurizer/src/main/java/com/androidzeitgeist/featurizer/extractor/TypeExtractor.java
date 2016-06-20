@@ -19,7 +19,7 @@ public class TypeExtractor implements Extractor {
 
     @Override
     public void extract(Document document, WebsiteFeatures.Builder builder) {
-        List<String> types = typeRule.apply(document);
+        final List<String> types = typeRule.apply(document);
 
         if (!types.isEmpty()) {
             builder.setType(types.get(0));

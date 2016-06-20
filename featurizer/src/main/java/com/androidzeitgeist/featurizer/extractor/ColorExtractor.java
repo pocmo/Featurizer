@@ -18,7 +18,7 @@ import java.util.List;
  * Extractor for finding a color for the website. The color is defined by website.
  */
 public class ColorExtractor implements Extractor {
-    private List<ContentSelectorRule> colorRules = Arrays.asList(
+    private final List<ContentSelectorRule> colorRules = Arrays.asList(
             new ContentSelectorRule("meta[name='theme-color']", false),
             new ContentSelectorRule("meta[name='msapplication-navbutton-color']", false),
             new ContentSelectorRule("meta[name='apple-mobile-web-app-status-bar-style']", false)
@@ -26,10 +26,10 @@ public class ColorExtractor implements Extractor {
 
     @Override
     public void extract(Document document, WebsiteFeatures.Builder builder) {
-        for (ContentSelectorRule rule : colorRules) {
-            List<String> colors = rule.apply(document);
+        for (final ContentSelectorRule rule : colorRules) {
+            final List<String> colors = rule.apply(document);
 
-            for (String color : colors) {
+            for (final String color : colors) {
                 try {
                     builder.setColor(Color.parseColor(color));
                 } catch (IllegalArgumentException e) {

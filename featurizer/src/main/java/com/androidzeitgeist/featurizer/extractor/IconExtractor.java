@@ -34,7 +34,7 @@ public class IconExtractor implements Extractor {
 
         // (1) First try to find an icon by using CSS selectors.
 
-        for (HrefSelectorRule rule : iconRules) {
+        for (final HrefSelectorRule rule : iconRules) {
             final List<String> results = rule.apply(document);
 
             if (!results.isEmpty()) {

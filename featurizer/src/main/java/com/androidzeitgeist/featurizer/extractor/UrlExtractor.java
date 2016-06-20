@@ -27,8 +27,8 @@ public class UrlExtractor implements Extractor {
     public void extract(Document document, WebsiteFeatures.Builder builder) {
         // (1) Use the CSS selector based rules to find the canonical URL
 
-        for (SelectorRule<String> rule : urlRules) {
-            List<String> urls = rule.apply(document);
+        for (final SelectorRule<String> rule : urlRules) {
+            final List<String> urls = rule.apply(document);
 
             if (!urls.isEmpty()) {
                 builder.setUrl(urls.get(0));

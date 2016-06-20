@@ -43,7 +43,7 @@ public class Featurizer {
             new ColorExtractor()
     ));
 
-    private OkHttpClient client;
+    private final OkHttpClient client;
     private List<Extractor> extractors;
 
     public Featurizer() {

@@ -16,7 +16,7 @@ import java.util.List;
  * Extractor implementation for finding the website's title.
  */
 public class TitleExtractor implements Extractor {
-    private List<TextSelectorRule> titleRules = Arrays.asList(
+    private final List<TextSelectorRule> titleRules = Arrays.asList(
             new TextSelectorRule("meta[property='og:title'"),
             new TextSelectorRule("meta[property='twitter:title']"),
             new TextSelectorRule("meta[name='hdl']"),
@@ -25,11 +25,11 @@ public class TitleExtractor implements Extractor {
 
     @Override
     public void extract(Document document, WebsiteFeatures.Builder builder) {
-        for (TextSelectorRule rule : titleRules) {
-            List<String> titles = rule.apply(document);
+        for (final TextSelectorRule rule : titleRules) {
+            final List<String> titles = rule.apply(document);
 
             if (!titles.isEmpty()) {
-                String title = titles.get(0);
+                final String title = titles.get(0);
 
                 if (title == null || "".equals(title)) {
                     continue;

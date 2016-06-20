@@ -28,7 +28,7 @@ public class ImageExtractor implements Extractor {
     public void extract(Document document, WebsiteFeatures.Builder builder) {
         // (1) Find image using css selector based rules
 
-        for (ContentSelectorRule rule : imageRules) {
+        for (final ContentSelectorRule rule : imageRules) {
             final List<String> urls = rule.apply(document);
 
             if (!urls.isEmpty()) {

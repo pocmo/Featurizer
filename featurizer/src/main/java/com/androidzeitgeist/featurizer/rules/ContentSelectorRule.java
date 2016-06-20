@@ -10,7 +10,7 @@ import org.jsoup.nodes.Element;
  * Rule for extracting the "content" attribute of elements that match a selector CSS query.
  */
 public class ContentSelectorRule extends SelectorRule<String> {
-    private boolean absoluteUrl;
+    private final boolean absoluteUrl;
 
     /**
      * @param cssQuery A selector like CSS query.
