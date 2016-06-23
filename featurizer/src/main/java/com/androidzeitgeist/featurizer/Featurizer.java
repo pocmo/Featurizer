@@ -92,9 +92,16 @@ public class Featurizer {
      * Extract features from the given stream using the charset and (base) URL passed in.
      */
     public WebsiteFeatures featurize(InputStream stream, String charset, String url) throws IOException {
-        WebsiteFeatures.Builder builder = new WebsiteFeatures.Builder();
-
         Document document = Jsoup.parse(stream, charset, url);
+
+        return featurize(document);
+    }
+
+    /**
+     * Extract features from the given document.
+     */
+    public WebsiteFeatures featurize(Document document) {
+        final WebsiteFeatures.Builder builder = new WebsiteFeatures.Builder();
 
         for (Extractor extractor : extractors) {
             extractor.extract(document, builder);
