@@ -6,17 +6,17 @@ An Android library for extracting features (title, icon, image, ...) from a webs
 
 Download
 --------
-Download [the latest JAR][1] or grab via Maven (jcenter):
+Grab via Maven:
 ```xml
 <dependency>
   <groupId>com.androidzeitgeist.featurizer</groupId>
   <artifactId>featurizer</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'com.androidzeitgeist.featurizer:featurizer:1.0.0'
+compile 'com.androidzeitgeist.featurizer:featurizer:1.1.0'
 ```
 
 Usage
@@ -54,5 +54,4 @@ License
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
-    
-[1]: https://jcenter.bintray.com/com/androidzeitgeist/featurizer/featurizer/
+ 
